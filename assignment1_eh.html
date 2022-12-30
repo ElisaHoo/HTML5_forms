@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_ass1.css">
+    <title>Assignment #1 - Elisa Harjunpää</title>
+</head>
+<body>
+    <form onsubmit="displayInput(event)">
+        <label for="id_fullname">Full Name</label>
+        <input type="text" name="fullname" id="id_fullname" size="60" 
+        placeholder="Firstname Lastname" maxlength="80">
+        <br>
+
+        <label for="id_password">Password</label>
+        <input type="password" name="password" id="id_password" pattern="^[a-zA-Z0-9_,.-:;?!]{8,20}$" required>
+        <br>
+
+        <label for="id_confirm">Confirm Password</label>
+        <input type="password" name="confirm_password" id="id_confirm" pattern="^[a-zA-Z0-9_,.-:;?!]{8,20}$" required>
+        <br>
+
+        <label for="gender">Gender</label>
+        <label for="id_female">
+        <input type="radio" name="gender" id="id_female" value="female" required>Female</label>
+        <label for="id_male">
+        <input type="radio" name="gender" id="id_male" value="male" required>Male</label>
+        <label for="id_other">
+        <input type="radio" name="gender" id="id_other" value="other" required>Other</label>
+        <br>
+
+        <label for="hobbies">Hobbies</label>
+        <label for="id_sports">
+        <input type="checkbox" name="hobbies" id="id_sports" value="Sports">Sports</label>
+        <label for="id_games">
+        <input type="checkbox" name="hobbies" id="id_games" value="Games">Games</label>
+        <label for="id_tv">
+        <input type="checkbox" name="hobbies" id="id_tv" value="TV">TV</label>
+        <label for="id_music">
+        <input type="checkbox" name="hobbies" id="id_music" value="Music">Music</label>
+        <br>
+
+        <label for="id_birthday">Birthday</label>
+        <input type="date" name="birthday" id="id_birthday">
+        <br>
+        <label for="id_height">Height</label>
+        <input type="range" name="height_range" id="id_height" min="40" max="300" value="160" oninput="this.form.height_number.value=this.value">
+        <input type="number" name="height_number" min="40" max="300" value="160" oninput="this.form.height_range.value=this.value">
+        <br>
+        <label for="id_color">Favorite Color</label>
+        <input type="color" id="id_color" value="#ff7dc2">
+        <br>
+        <label for="id_country">Home Country</label>
+        <select name="country" id="id_country">
+            <option value="Finland">Finland</option>
+            <option value="Russia">Russia</option>
+            <optgroup label="Skandinavia">
+                <option value="Sweden">Sweden</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Norway">Norway</option>
+                <option value="Island">Island</option>
+            </optgroup>        
+            <optgroup label="Baltic">
+                <option value="Estonia">Estonia</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lithuania">Lithuania</option>
+            </optgroup> 
+        </select>
+        <br>
+        <label for="id_profession">Profession</label>
+        <input list="professions" name="profession" id="id_profession">
+        <datalist id="professions">
+            <option value="Teacher">
+            <option value="Nurse">
+            <option value="Blumber">
+            <option value="Veterinarian">
+        </datalist>
+        <br>
+        <label for="id_message">Message</label>
+        <textarea id="id_message" name="message" placeholder="Type here your message. Max 1000 characters." rows="6" cols="60" maxlength="1000" required></textarea>
+        <br>
+        <input type="submit" value="Send">
+        <br><br>
+        <hr>
+        <output id="id_result">Result:</output>
+
+        <script src="script_ass1.js"></script>
+
+    </form>
+    
+</body>
+</html>
